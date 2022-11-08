@@ -3,9 +3,31 @@ import random as r
 print("")
 print("-----BinDec Training-----\n\n1: Random \n2: Dec-Bin \n3: Bin-Dec")
 m=2
-Mode = int(input("Mode:"))
-Rounds = int(input("Rounds:"))
-Range = int(input("Range:"))
+
+inputsCorrect = False
+while (inputsCorrect == False):
+    Mode = input("Mode:")
+    if(Mode != ""):
+        Mode = int(Mode)
+        inputsCorrect = True
+    else: print("input error")
+
+inputsCorrect = False
+while (inputsCorrect == False):
+    Rounds = input("Rounds:")
+    if(Rounds != ""):
+        Rounds = int(Rounds)
+        inputsCorrect = True
+    else: print("input error")
+
+inputsCorrect = False
+while (inputsCorrect == False):
+    Range = input("Range:")
+    if(Range != ""):
+        Range = int(Range)
+        inputsCorrect = True
+    else: print("input error")
+
 rate_r=0
 rate_d_b = 0
 rate_b_d = 0
@@ -26,14 +48,26 @@ for ro in range(0, Rounds):
         
     if m==0:
         print("Dec:", ZahlDec)
-        ZahlGuess = int(input("Bin: "))       
-        if format(ZahlGuess, "d") == ZahlBin:
-            win=True
+        inputsCorrect = False
+        while (inputsCorrect == False):
+            ZahlGuess = input("Bin: ")
+            if(ZahlGuess != ""):
+                ZahlGuess = int(ZahlGuess) 
+                inputsCorrect = True      
+                if format(ZahlGuess, "d") == ZahlBin:
+                    win=True
+            else: print("input error")
     if m==1:
         print("Bin:", ZahlBin)
-        ZahlGuess = int(input("Dec: "))
-        if ZahlGuess == ZahlDec:
-            win=True
+        inputsCorrect = False
+        while (inputsCorrect == False):
+            ZahlGuess = input("Dec: ")
+            if(ZahlGuess != ""):
+                ZahlGuess = int(ZahlGuess)   
+                inputsCorrect = True  
+                if ZahlGuess == ZahlDec:
+                    win=True
+            else: print("input error")
         
     print(win)
     if win:
