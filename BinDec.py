@@ -58,7 +58,7 @@ for ro in range(0, Rounds):
 rate_r = 100*rate_r/Rounds
 print("_____")
 print("")
-print("Round:", rate_r, "%")
+print("Right to", rate_r, "%")
 print("-----------------END")      
         
     
